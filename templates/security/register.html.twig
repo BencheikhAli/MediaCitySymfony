@@ -1,0 +1,25 @@
+
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+<div class="container">
+  <form>
+    <div class="mb-3">
+      {{ form_label(form.nom, "Nom") }}
+      {{ form_widget(form.nom, {'attr': {'class':'form-control', 'aria-describedby':'emailHelp', 'placeholder':'Nom'}} ) }}
+    </div>
+    <div class="mb-3">
+      {{ form_label(form.prenom, "Prenom") }}
+      {{ form_widget(form.prenom, {'attr': {'class':'form-control', 'placeholder':'Prenom'}} ) }}
+    </div>
+    <div class="mb-3">
+      {{ form_label(form.email, "Email") }}
+      {{ form_widget(form.email, {'attr': {'class':'form-control'}} ) }}
+    </div>
+    <div class="mb-3">
+      {{ form_label(form.password, "Password") }}
+      {{ form_widget(form.password, {'attr': {'class':'form-control'}} ) }}
+    </div>
+    {{ form_widget(form.save, {'attr': {'class':'btn btn-primary', 'placeholder':'Submit'}})}}
+    {{ form_rest(form) }}
+  </form>
+</div>

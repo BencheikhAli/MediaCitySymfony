@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+<div class="container">
+  <form>
+    <div class="mb-3">
+      {{ form_label(form.nom, "Nom de la personne") }}
+      {{ form_widget(form.nom, {'attr': {'class':'form-control', 'aria-describedby':'emailHelp', 'placeholder':'Nom'}})}}
+    </div>
+    <div class="mb-3">
+      {{ form_label(form.prenom, "Prenom de la personne") }}
+      {{ form_widget(form.prenom, {'attr': {'class':'form-control', 'placeholder':'Prenom'}})}}
+    </div>
+    <div class="mb-3">
+      {{ form_label(form.adresse, "Adresse") }}
+      {{ form_widget(form.adresse, {'attr': {'class':'form-control'}})}}
+    </div>
+    {{ form_widget(form.save, {'attr': {'class':'btn btn-primary', 'placeholder':'Submit'}})}}
+    {{ form_rest(form) }}
+  </form>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="{{ asset('/js/app.js') }}"></script>
+{% endblock %}
